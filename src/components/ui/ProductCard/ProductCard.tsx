@@ -56,23 +56,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {title}
           </h3>
           <p className={styles.category}>{category}</p>
-          <div>
-            <p className={styles.price}>{convertDollarToRupiah(price)}</p>
-            <div className={styles.buttonContainer}>
-              <Button
-                onClick={() => onAddToCart(id)}
-                className={styles.button1}
-              >
-                Add to cart
-              </Button>
-              <Button
-                onClick={() => onAddToWishlist(id)}
-                className={styles.button2}
-              >
-                Wishlist
-              </Button>
-            </div>
-          </div>
+          <p className={styles.price}>{convertDollarToRupiah(price)}</p>
+        </div>
+        <div className={styles.buttonContainer}>
+          <Button onClick={() => onAddToCart(id)} className={styles.button1}>
+            Add to cart
+          </Button>
+          <Button
+            onClick={() => onAddToWishlist(id)}
+            className={styles.button2}
+          >
+            Wishlist
+          </Button>
         </div>
       </div>
 

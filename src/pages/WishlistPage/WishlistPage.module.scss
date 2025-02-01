@@ -1,7 +1,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: rem-calc(120) rem-calc(24) rem-calc(24);
+  padding: rem-calc(120) 0 rem-calc(24);
   @media (max-width: 768px) {
     padding: rem-calc(225) rem-calc(24) rem-calc(24);
   }
@@ -10,6 +10,7 @@
 .title {
   text-align: center;
   font-size: rem-calc(24);
+  font-weight: bold;
   margin-bottom: rem-calc(20);
   @media (max-width: 768px) {
     font-size: rem-calc(20);
@@ -31,6 +32,7 @@
   border: 1px solid #ddd;
   border-radius: rem-calc(10);
   @media (max-width: 768px) {
+    gap: rem-calc(10);
     flex-direction: column;
     align-items: center;
   }
@@ -48,6 +50,9 @@
   flex: 1;
   margin-left: rem-calc(20);
   @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(10);
     margin-left: 0;
     margin-top: rem-calc(10);
     text-align: center;
