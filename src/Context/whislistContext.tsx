@@ -54,8 +54,10 @@ const wishlistReducer = (
       };
     case 'CLEAR_WISHLIST':
       return { items: [] };
-    default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+    default: {
+      const _exhaustiveCheck: never = action;
+      throw new Error(`Unhandled action type: ${_exhaustiveCheck}`);
+    }
   }
 };
 
