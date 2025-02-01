@@ -1,0 +1,107 @@
+.container {
+  max-width: rem-calc(500);
+  margin: 0 auto;
+  padding: rem-calc(20);
+  background-color: #fff;
+  box-shadow: 0 rem-calc(4) rem-calc(8) rgba(0, 0, 0, 0.1);
+  border-radius: rem-calc(8);
+}
+
+.title {
+  margin-bottom: rem-calc(20);
+  font-size: rem-calc(24);
+  text-align: center;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: rem-calc(20);
+}
+
+.input {
+  width: 100%;
+  padding: rem-calc(12);
+  border: rem-calc(1) solid #ccc;
+  border-radius: rem-calc(4);
+  outline: none;
+  font-size: rem-calc(16);
+  color: #333;
+  background-color: #fafafa;
+
+  &:focus {
+    border-color: $danger;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: rem-calc(12);
+  transform: translateY(-50%);
+  font-size: rem-calc(16);
+  color: #666;
+  pointer-events: none;
+  transition: 0.2s ease all;
+
+  .input:focus ~ &,
+  .input:not(:placeholder-shown) ~ & {
+    top: -10px;
+    left: 10px;
+    font-size: rem-calc(12);
+    color: $danger;
+  }
+}
+
+.error {
+  color: $danger;
+  font-size: rem-calc(14);
+  margin-bottom: rem-calc(20);
+  text-align: center;
+}
+
+.submitButton {
+  width: 100%;
+  padding: rem-calc(12);
+  font-size: rem-calc(16);
+  color: #fff;
+  background-color: $danger;
+  border: none;
+  border-radius: rem-calc(4);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $danger;
+    color: $white;
+  }
+}
+
+// Responsif untuk layar ponsel
+@media (max-width: 768px) {
+  .container {
+    padding: rem-calc(15);
+  }
+
+  .title {
+    font-size: rem-calc(20);
+  }
+
+  .input {
+    padding: rem-calc(10);
+    font-size: rem-calc(14);
+  }
+
+  .label {
+    font-size: rem-calc(14);
+  }
+
+  .submitButton {
+    padding: rem-calc(10);
+    font-size: rem-calc(14);
+  }
+}

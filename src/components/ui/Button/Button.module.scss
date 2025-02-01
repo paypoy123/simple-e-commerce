@@ -1,0 +1,49 @@
+.button {
+  color: $white;
+  text-align: center;
+  font-family: $font-primary;
+  font-weight: 600;
+  border-radius: rem-calc(5);
+
+  &.basic {
+    background-color: $white;
+    color: $black;
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
+    }
+  }
+
+  &.primary {
+    background-color: $primary;
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
+      background-color: $disabled;
+    }
+  }
+
+  &.danger {
+    background-color: $danger;
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
+      background-color: $disabled;
+    }
+  }
+
+  &.small {
+    font-size: rem-calc(14);
+    padding: rem-calc(13) rem-calc(20);
+  }
+
+  &.medium {
+    font-size: rem-calc(16);
+    padding: rem-calc(15) rem-calc(20);
+  }
+
+  &.large {
+    font-size: rem-calc(18);
+    padding: rem-calc(17) rem-calc(20);
+  }
+}

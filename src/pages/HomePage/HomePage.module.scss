@@ -1,0 +1,34 @@
+.container {
+  max-width: rem-calc(1226);
+  padding: rem-calc(120) rem-calc(24) rem-calc(24);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: rem-calc(24);
+  font-weight: bold;
+  margin-bottom: rem-calc(16);
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); // Menampilkan 5 card di layar besar
+  gap: rem-calc(16);
+  margin-bottom: rem-calc(16);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: rem-calc(225) rem-calc(24) rem-calc(24);
+  }
+  .title {
+    font-size: rem-calc(20);
+  }
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr); // Menampilkan 2 card di layar hp
+    padding: rem-calc(0);
+  }
+}

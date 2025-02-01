@@ -1,0 +1,118 @@
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: rem-calc(8);
+  overflow: hidden;
+  transition: transform 0.3s;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.image {
+  width: 100%;
+  height: rem-calc(250);
+}
+
+.cardContent {
+  padding: rem-calc(16);
+  background-color: #f3ebeb;
+  height: rem-calc(210);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .title {
+    font-size: rem-calc(16);
+    margin-bottom: rem-calc(8);
+    font-weight: bold;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  .category {
+    font-size: rem-calc(11);
+    color: #666;
+    margin-bottom: rem-calc(8);
+  }
+
+  .price {
+    font-size: rem-calc(16);
+    font-weight: bold;
+    margin-bottom: rem-calc(10);
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: rem-calc(4);
+    overflow: hidden;
+    flex-wrap: wrap; // Menambahkan flex-wrap agar bisa berubah layout
+
+    .button1,
+    .button2 {
+      flex: 1 0 rem-calc(100); // Flex-grow minimum 100
+      padding: rem-calc(13) rem-calc(16);
+      border-radius: 0;
+      font-size: rem-calc(14);
+      font-weight: bold;
+    }
+
+    .button1 {
+      color: $white;
+      background-color: $danger;
+    }
+
+    .button2 {
+      color: $black;
+    }
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .image {
+    height: rem-calc(200);
+  }
+
+  .cardContent {
+    height: rem-calc(187);
+    .title {
+      margin-bottom: rem-calc(4);
+      -webkit-line-clamp: 2; // Ubah batas maksimal menjadi 2 baris
+      line-clamp: 2; // Ubah batas maksimal menjadi 2 baris
+    }
+    .price {
+      margin-bottom: rem-calc(6);
+    }
+    .buttonContainer {
+      .button1,
+      .button2 {
+        padding: rem-calc(8) rem-calc(12);
+      }
+    }
+  }
+}

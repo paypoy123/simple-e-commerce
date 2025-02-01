@@ -1,0 +1,171 @@
+.checkoutPageContainer {
+  padding: rem-calc(120) 0 rem-calc(24);
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    padding: rem-calc(225) rem-calc(24) rem-calc(24);
+  }
+}
+
+.checkoutPageHeader {
+  text-align: center;
+  margin-bottom: rem-calc(20);
+
+  .checkoutPageTitle {
+    font-size: rem-calc(24);
+    font-weight: bold;
+    margin-bottom: rem-calc(10);
+    @media (max-width: 768px) {
+      font-size: rem-calc(20);
+    }
+  }
+}
+
+.cartItemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(20);
+  @media (max-width: 768px) {
+    gap: rem-calc(10);
+  }
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem-calc(15);
+  gap: rem-calc(20);
+  border: 1px solid #ddd;
+  border-radius: rem-calc(10);
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: rem-calc(10);
+  }
+}
+
+.cartItemImageContainer img {
+  max-width: rem-calc(100);
+  @media (max-width: 768px) {
+    max-width: rem-calc(80);
+  }
+}
+
+.cartItemInfo {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  flex: 1;
+  gap: rem-calc(10);
+  @media (max-width: 768px) {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+.cartItemTitle {
+  font-size: rem-calc(19.2);
+  @media (max-width: 768px) {
+    font-size: rem-calc(16);
+  }
+}
+
+.cartItemPrice {
+  color: #888;
+}
+
+.cartItemQuantity {
+  display: flex;
+  align-items: center;
+  gap: rem-calc(10);
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.quantityButton {
+  padding: rem-calc(5) rem-calc(10);
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    padding: rem-calc(5);
+  }
+}
+
+.quantityValue {
+  font-size: rem-calc(16);
+  @media (max-width: 768px) {
+    font-size: rem-calc(14);
+  }
+}
+
+.removeItemButton {
+  border: none;
+  background: $danger;
+  color: $white;
+  border-radius: rem-calc(5);
+  padding: rem-calc(5) rem-calc(10);
+  cursor: pointer;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: rem-calc(10);
+  }
+}
+
+.totalPriceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: rem-calc(20);
+  padding: rem-calc(15);
+  border: 1px solid #ddd;
+  border-radius: rem-calc(10);
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: rem-calc(10);
+  }
+
+  .totalPriceLabel {
+    font-weight: bold;
+    margin-bottom: rem-calc(10);
+    @media (max-width: 768px) {
+      margin-bottom: rem-calc(10);
+    }
+  }
+}
+
+.checkoutButton {
+  padding: rem-calc(10) rem-calc(20);
+  background: $danger;
+  font-size: rem-calc(16);
+  font-weight: bold;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  border-radius: rem-calc(5);
+
+  @media (max-width: 768px) {
+    font-size: rem-calc(14);
+    width: 100%;
+    padding: rem-calc(10);
+  }
+}
+
+.emptyCartMessage {
+  text-align: center;
+  color: #888;
+}
+
+.checkoutFormOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

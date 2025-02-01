@@ -1,0 +1,34 @@
+@use 'sass:map';
+
+// prettier-ignore
+$sizes: (
+  "display-2xl": (font-size: rem-calc(72), line-height: rem-calc(90), letter-spacing: -0.02em),
+  "display-xl": (font-size: rem-calc(60), line-height: rem-calc(72), letter-spacing: -0.02em),
+  "display-lg": (font-size: rem-calc(48), line-height: rem-calc(60), letter-spacing: -0.02em),
+  "display-md": (font-size: rem-calc(36), line-height: rem-calc(44), letter-spacing: -0.02em),
+  "display-sm": (font-size: rem-calc(30), line-height: rem-calc(38)),
+  "display-xs": (font-size: rem-calc(24), line-height: rem-calc(32)),
+  "text-xl": (font-size: rem-calc(20), line-height: rem-calc(30)),
+  "text-lg": (font-size: rem-calc(18), line-height: rem-calc(24)),
+  "text-md": (font-size: rem-calc(16), line-height: rem-calc(24)),
+  "text-sm": (font-size: rem-calc(14), line-height: rem-calc(20)),
+  "text-xs": (font-size: rem-calc(12), line-height: rem-calc(18))
+);
+
+$weights: (
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+);
+
+@mixin typography($size, $weight) {
+  @if map.has-key($sizes, $size) and map.has-key($weights, $weight) {
+    @each $key, $value in map.get($sizes, $size) {
+      #{$key}: $value;
+    }
+    font-weight: map.get($weights, $weight);
+  } @else {
+    @warn 'Invalid size specified or weight specified: #{$size}, #{$weight}';
+  }
+}

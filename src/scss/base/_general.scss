@@ -1,0 +1,14 @@
+@use '../variables' as *;
+@use '../functions' as *;
+@use '../mixins' as *;
+
+:root {
+  font-family: $font-primary;
+  @include typography('text-md', 'regular');
+}
+
+.container {
+  max-width: rem-calc(1226);
+  padding: rem-calc(24);
+  margin: 0 auto;
+}

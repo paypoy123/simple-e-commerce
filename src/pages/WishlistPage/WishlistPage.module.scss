@@ -1,0 +1,110 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: rem-calc(120) rem-calc(24) rem-calc(24);
+  @media (max-width: 768px) {
+    padding: rem-calc(225) rem-calc(24) rem-calc(24);
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: rem-calc(24);
+  margin-bottom: rem-calc(20);
+  @media (max-width: 768px) {
+    font-size: rem-calc(20);
+    margin-bottom: rem-calc(15);
+  }
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(20);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem-calc(15);
+  border: 1px solid #ddd;
+  border-radius: rem-calc(10);
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.itemImage {
+  max-width: rem-calc(100);
+  border-radius: rem-calc(5);
+  @media (max-width: 768px) {
+    max-width: rem-calc(80);
+  }
+}
+
+.itemDetails {
+  flex: 1;
+  margin-left: rem-calc(20);
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: rem-calc(10);
+    text-align: center;
+  }
+}
+
+.itemTitle {
+  font-size: rem-calc(18);
+  margin-bottom: rem-calc(5);
+  @media (max-width: 768px) {
+    font-size: rem-calc(16);
+  }
+}
+
+.itemPrice {
+  color: #888;
+}
+
+.itemActions {
+  display: flex;
+  flex-direction: column;
+  gap: rem-calc(10);
+  @media (max-width: 768px) {
+    flex-direction: row;
+    margin-top: rem-calc(10);
+  }
+}
+
+.addToCartButton {
+  padding: rem-calc(10) rem-calc(20);
+  background-color: $danger;
+  font-weight: bold;
+  color: $white;
+  border: none;
+  border-radius: rem-calc(5);
+  @media (max-width: 768px) {
+    padding: rem-calc(8) rem-calc(15);
+  }
+}
+
+.removeFromWishlistButton {
+  padding: rem-calc(10) rem-calc(20);
+  background-color: $white;
+  box-shadow: rem-calc(1) rem-calc(1) rem-calc(4) rgba(0, 0, 0, 0.1),
+    rem-calc(-1) rem-calc(-1) rem-calc(4) rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: $black;
+  border: none;
+  border-radius: rem-calc(5);
+  cursor: pointer;
+  @media (max-width: 768px) {
+    padding: rem-calc(8) rem-calc(15);
+  }
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #888;
+  font-size: rem-calc(18);
+}

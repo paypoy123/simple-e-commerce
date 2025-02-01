@@ -1,0 +1,167 @@
+.navbar {
+  background-color: #f3ebeb;
+  padding: 1rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed; /* Menjadikan Navbar fixed */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Pastikan Navbar berada di depan konten lain */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  .title {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $danger;
+  }
+
+  .menuIcon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 500px;
+
+  .searchInput {
+    position: relative;
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+  }
+
+  .closeInput {
+    position: absolute;
+    right: 98px; // Sesuaikan posisi horizontal ikon
+    top: 50%; // Posisikan secara vertikal di tengah input
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px; // Sesuaikan ukuran ikon
+    height: 20px; // Sesuaikan ukuran ikon
+    fill: #ccc; // Warna ikon
+  }
+
+  .closeInputAligned {
+    right: 10px; // Atur posisi sesuai keinginan Anda
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .searchButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: $danger;
+    color: #fff;
+    font-size: rem-calc(14);
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #ffffff;
+      color: $black;
+    }
+  }
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: $danger;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+
+    &:hover {
+      color: $danger;
+    }
+
+    .cartIcon {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    .cartCount,
+    .wishlistCount {
+      background-color: $danger;
+      color: $white;
+      border-radius: 50%;
+      padding: 2px 5px;
+      font-size: 0.7em;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+
+    &.active1::after,
+    &.active2::after,
+    &.active3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 2px;
+      width: 100%;
+      background-color: $danger;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &.active1:hover::after,
+    &.active2:hover::after,
+    &.active3:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchContainer {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .navLinks {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 1rem;
+
+    a {
+      margin-left: 0;
+    }
+  }
+}
