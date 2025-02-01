@@ -1,6 +1,6 @@
 .navbar {
   background-color: #f3ebeb;
-  padding: 1rem 1rem;
+  padding: rem-calc(16) rem-calc(24);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1190px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,12 +56,12 @@
 
   .closeInput {
     position: absolute;
-    right: 98px; // Sesuaikan posisi horizontal ikon
+    right: 95px; // Sesuaikan posisi horizontal ikon
     top: 50%; // Posisikan secara vertikal di tengah input
     transform: translateY(-50%);
     cursor: pointer;
-    width: 20px; // Sesuaikan ukuran ikon
-    height: 20px; // Sesuaikan ukuran ikon
+    width: 10px; // Sesuaikan ukuran ikon
+    height: 10px; // Sesuaikan ukuran ikon
     fill: #ccc; // Warna ikon
   }
 
@@ -153,6 +153,10 @@
   .searchContainer {
     width: 100%;
     margin-top: 1rem;
+
+    .closeInput {
+      right: 93px;
+    }
   }
 
   .navLinks {

@@ -1,61 +1,56 @@
 .card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 rem-calc(2) rem-calc(8) rgba(0, 0, 0, 0.1);
   border-radius: rem-calc(8);
   overflow: hidden;
   transition: transform 0.3s;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
 
   &:hover {
     transform: scale(1.03);
   }
-}
 
-.image {
-  width: 100%;
-  height: rem-calc(250);
-}
-
-.cardContent {
-  padding: rem-calc(16);
-  background-color: #f3ebeb;
-  height: rem-calc(210);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  .title {
-    font-size: rem-calc(16);
-    margin-bottom: rem-calc(8);
-    font-weight: bold;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
+  .image {
+    width: 100%;
+    height: rem-calc(250);
   }
 
-  .category {
-    font-size: rem-calc(11);
-    color: #666;
-    margin-bottom: rem-calc(8);
-  }
+  .cardContent {
+    padding: rem-calc(16);
+    background-color: #f3ebeb;
+    height: rem-calc(100);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
-  .price {
-    font-size: rem-calc(16);
-    font-weight: bold;
-    margin-bottom: rem-calc(10);
-  }
+    .title {
+      font-size: rem-calc(16);
+      font-weight: bold;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
 
+    .category {
+      font-size: rem-calc(11);
+      color: #666;
+    }
+
+    .price {
+      font-size: rem-calc(16);
+      font-weight: bold;
+    }
+  }
   .buttonContainer {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: rem-calc(4);
     overflow: hidden;
     flex-wrap: wrap; // Menambahkan flex-wrap agar bisa berubah layout
 
@@ -94,24 +89,22 @@
 }
 
 @media (max-width: 768px) {
-  .image {
-    height: rem-calc(200);
-  }
+  .card {
+    .image {
+      height: rem-calc(200);
+    }
 
-  .cardContent {
-    height: rem-calc(187);
-    .title {
-      margin-bottom: rem-calc(4);
-      -webkit-line-clamp: 2; // Ubah batas maksimal menjadi 2 baris
-      line-clamp: 2; // Ubah batas maksimal menjadi 2 baris
-    }
-    .price {
-      margin-bottom: rem-calc(6);
-    }
-    .buttonContainer {
-      .button1,
-      .button2 {
-        padding: rem-calc(8) rem-calc(12);
+    .cardContent {
+      height: rem-calc(100);
+      .title {
+        -webkit-line-clamp: 1; // Ubah batas maksimal menjadi 1 baris
+        line-clamp: 1; // Ubah batas maksimal menjadi 1 baris
+      }
+      .buttonContainer {
+        .button1,
+        .button2 {
+          padding: rem-calc(8) rem-calc(12);
+        }
       }
     }
   }

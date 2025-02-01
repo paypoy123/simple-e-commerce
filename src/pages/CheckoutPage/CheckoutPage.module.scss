@@ -108,6 +108,8 @@
   padding: rem-calc(5) rem-calc(10);
   cursor: pointer;
   @media (max-width: 768px) {
+    font-size: rem-calc(15);
+    font-weight: bold;
     width: 100%;
     padding: rem-calc(10);
   }
